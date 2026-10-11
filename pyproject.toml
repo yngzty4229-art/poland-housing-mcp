@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "poland-housing-mcp"
+version = "0.1.0"
+description = "MCP server for the Polish housing market: apartment valuation, transaction prices from official notarial deeds (RCN) and developers' asking prices"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["mcp", "poland", "real-estate", "housing", "property-prices", "avm", "rcn"]
+dependencies = ["mcp>=2.0,<3", "httpx>=0.27,<1"]
+
+[project.urls]
+Homepage = "https://github.com/yngzty4229-art/poland-housing-mcp"
+Data = "https://github.com/yngzty4229-art/poland-housing-prices"
+
+[project.scripts]
+poland-housing-mcp = "poland_housing_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/poland_housing_mcp"]
